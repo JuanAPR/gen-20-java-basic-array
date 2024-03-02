@@ -48,9 +48,10 @@ public class Main {
 
                         break;
                     case 4:
-
-                        System.out.println(" our of order, in progress");
-
+                        inputOuput();
+                        Thread.sleep((2000));
+                        System.out.println();
+                        System.out.println();
                         break;
                     case 5:
                         a = 0;
@@ -97,7 +98,7 @@ public class Main {
     public static void twoArray(){
         Scanner scan1 = new Scanner(System.in);
         Scanner scan2 = new Scanner(System.in);
-        System.out.print("Berapa Array yang ingin diproses menjadi array baru? ");
+        System.out.print("Jumlah array yang ingin dijadikan array baru: ");
         int count = scan1.nextInt();
         int[][] arr = new int[count][];
         for(int i = 0; i<count;i++){
@@ -118,8 +119,52 @@ public class Main {
         start();
     }
 
-    public void inputOuput(){
+    public static void inputOuput(){
+        Scanner write = new Scanner(System.in);
+        System.out.println("Input dan Output pada Java");
+        System.out.println("1. Membuat txt");
+        System.out.println("2. Membaca txt");
+        System.out.println("3. Kembali ke menu utama");
+        int inp2 = write.nextInt();
 
+        switch (inp2){
+            case 1:
+                buatFile();
+                System.out.println();
+                System.out.println();
+                break;
+            case 2:
+                bacaFile();
+                System.out.println();
+                System.out.println();
+                break;
+            case 3:
+                start();
+                System.out.println();
+                System.out.println();
+                break;
+            default:
+                System.out.println("Pilihan tidak tersedia, kembali ke menu sebelumnya");
+                inputOuput();
+
+        }
+    }
+
+    public static void buatFile(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Masukkan kalimat yang akan ditambahkan pada output.txt: ");
+        String a = scan.nextLine();
+        FileInputOutput written = new FileInputOutput();
+        written.makeFile(a);
+        System.out.println();
+        inputOuput();
+    }
+
+    public static void bacaFile(){
+        FileInputOutput read = new FileInputOutput();
+        read.readFile();
+        System.out.println();
+        inputOuput();
     }
     public static int[] convertToIntArray(String[] convert){
         int [] newArray = new int[convert.length];
