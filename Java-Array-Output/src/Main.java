@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
 public class Main {
-    private static int a=1;
     public static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
 
@@ -14,7 +13,7 @@ public class Main {
 
     public static void start(){
         try{
-            while(a!=0){
+
                 System.out.println("Array dan Input Output");
                 System.out.println("1. Jumlahkan element pada Array");
                 System.out.println("2. Jumlahkan element Array di dalam Array");
@@ -54,7 +53,7 @@ public class Main {
                         System.out.println();
                         break;
                     case 5:
-                        a = 0;
+                        //a = 0;
                         break;
                     default:
                         System.out.println("Pilihan tidak ada");
@@ -63,7 +62,6 @@ public class Main {
                         System.out.flush();
                         start();
                 }
-            }
 
         }
         catch(InterruptedException e){
